@@ -1,11 +1,3 @@
-//
-//  EndPointType.swift
-//  CashFlow
-//
-//  Created by Kostya Karakay on 11.01.2020.
-//  Copyright © 2020 Kostya Karakay. All rights reserved.
-//
-
 import Alamofire
 
 public protocol EndPointType {

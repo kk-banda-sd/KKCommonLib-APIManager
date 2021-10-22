@@ -1,11 +1,3 @@
-//
-//  APIRequest.swift
-//  smapp
-//
-//  Created by Kostya Karakay on 26.07.2021.
-//  Copyright © 2021 CherryPie Studio. All rights reserved.
-//
-
 import Alamofire
 
 public struct APIRequest {
