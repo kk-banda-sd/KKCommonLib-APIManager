@@ -13,7 +13,7 @@ open class APIManager {
     
     // MARK: - Vars & Lets
     private let sessionManager: SessionManager
-    static var networkEnviroment: NetworkEnvironment = UserData.networkEnvironment
+    static var networkEnviroment: NetworkEnvironment = .staging
     
     // MARK: - Vars & Lets
     private static var configurator: URLSessionConfiguration {
@@ -44,7 +44,7 @@ open class APIManager {
 // MARK: - Requests
 public extension APIManager {
     @discardableResult
-    func request<T: APIResponse>(type: EndPointType, params: Parameters? = nil, responseClass: T, handler: @escaping (T) -> Void) -> APIRequest {
+    public func request<T: APIResponse>(type: EndPointType, params: Parameters? = nil, responseClass: T, handler: @escaping (T) -> Void) -> APIRequest {
         return self.sessionManager.request(type.url,
                                     method: type.httpMethod,
                                     parameters: params,

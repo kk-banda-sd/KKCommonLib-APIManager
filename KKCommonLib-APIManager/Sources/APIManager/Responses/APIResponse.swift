@@ -10,7 +10,7 @@ import UIKit
 import SwiftyJSON
 import KKCommonLib
 
-class APIResponse: NSObject {
+public class APIResponse: NSObject {
 
     var complete: Bool = false
     
