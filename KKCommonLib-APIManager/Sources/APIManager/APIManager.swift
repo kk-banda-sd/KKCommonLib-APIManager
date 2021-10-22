@@ -42,7 +42,7 @@ open class APIManager {
 }
 
 // MARK: - Requests
-private extension APIManager {
+public extension APIManager {
     @discardableResult
     func request<T: APIResponse>(type: EndPointType, params: Parameters? = nil, responseClass: T, handler: @escaping (T) -> Void) -> APIRequest {
         return self.sessionManager.request(type.url,

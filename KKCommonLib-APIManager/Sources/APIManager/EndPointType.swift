@@ -8,7 +8,7 @@
 
 import Alamofire
 
-protocol EndPointType {
+public protocol EndPointType {
     
     // MARK: - Vars & Lets
     var baseURL: String { get }
@@ -19,7 +19,7 @@ protocol EndPointType {
     var encoding: ParameterEncoding { get }
 }
 
-enum NetworkEnvironment: String, CaseIterable {
+public enum NetworkEnvironment: String, CaseIterable {
     case staging
     case production
 }
