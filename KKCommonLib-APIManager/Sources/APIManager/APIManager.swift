@@ -60,7 +60,7 @@ public extension APIManager {
                                             }
                                             serverResponse.parseFromResponse(JSON)
                                         } else if let error = response.error, serverResponse.complete == false {
-                                            serverResponse.error = SMError(error)
+                                            serverResponse.error = error.kkError
                                             serverResponse.complete = !response.result.isFailure
                                         }
                                         handler(serverResponse)
