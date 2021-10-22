@@ -44,7 +44,7 @@ open class APIManager {
 // MARK: - Requests
 public extension APIManager {
     @discardableResult
-    public func request<T: APIResponse>(type: EndPointType, params: Parameters? = nil, responseClass: T, handler: @escaping (T) -> Void) -> APIRequest {
+    func request<T: APIResponse>(type: EndPointType, params: Parameters? = nil, responseClass: T, handler: @escaping (T) -> Void) -> APIRequest {
         return self.sessionManager.request(type.url,
                                     method: type.httpMethod,
                                     parameters: params,

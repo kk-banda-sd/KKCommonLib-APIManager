@@ -18,7 +18,7 @@ public struct APIRequest {
 }
 
 // MARK: - Equatable
-public extension APIRequest: Equatable {
+extension APIRequest: Equatable {
     static public func == (lhs: APIRequest, rhs: APIRequest) -> Bool {
         return lhs.id == rhs.id
     }
