@@ -10,13 +10,13 @@ import UIKit
 import SwiftyJSON
 import KKCommonLib
 
-public class APIResponse: NSObject {
+open class APIResponse: NSObject {
 
-    var complete: Bool = false
+    public var complete: Bool = false
     
-    var error: KKError?
+    public var error: KKError?
     
-    func parseFromResponse(_ dict: JSON) {
+    open func parseFromResponse(_ dict: JSON) {
         
     }
 }

@@ -17,6 +17,7 @@ public protocol EndPointType {
     var headers: HTTPHeaders? { get }
     var url: URL { get }
     var encoding: ParameterEncoding { get }
+    var version: String { get }
 }
 
 public enum NetworkEnvironment: String, CaseIterable {

@@ -13,7 +13,7 @@ open class APIManager {
     
     // MARK: - Vars & Lets
     private let sessionManager: SessionManager
-    static var networkEnviroment: NetworkEnvironment = .staging
+    static public var networkEnviroment: NetworkEnvironment = .staging
     
     // MARK: - Vars & Lets
     private static var configurator: URLSessionConfiguration {
