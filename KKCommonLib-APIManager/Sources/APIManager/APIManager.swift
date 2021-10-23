@@ -4,7 +4,7 @@ import Alamofire_SwiftyJSON
 open class APIManager {
     
     // MARK: - Vars & Lets
-    private let sessionManager: SessionManager
+    public let sessionManager: SessionManager
     static public var networkEnviroment: NetworkEnvironment = .staging
     
     // MARK: - Vars & Lets
