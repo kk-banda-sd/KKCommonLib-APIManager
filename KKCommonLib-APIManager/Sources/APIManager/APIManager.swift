@@ -5,7 +5,7 @@ open class APIManager {
     
     // MARK: - Vars & Lets
     public let sessionManager: SessionManager
-    static public var networkEnviroment: NetworkEnvironment = .staging
+    static public var networkEnviroment: NetworkEnvironment = .production
     
     // MARK: - Vars & Lets
     private static var configurator: URLSessionConfiguration {
