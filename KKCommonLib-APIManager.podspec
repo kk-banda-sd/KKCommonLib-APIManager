@@ -17,9 +17,6 @@ This CocoaPods library helps you perform calculation.
   s.swift_version = '5.0'
 
   s.source_files = 'KKCommonLib-APIManager/**/*.{h,m,swift}'
-
-  s.xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-  s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   
   s.dependency 'KKCommonLib'
   s.dependency 'Alamofire'
