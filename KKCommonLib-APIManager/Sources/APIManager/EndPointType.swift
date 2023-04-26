@@ -13,6 +13,7 @@ public protocol EndPointType {
 }
 
 public enum NetworkEnvironment: String, CaseIterable {
+    case local
     case staging
     case production
 }

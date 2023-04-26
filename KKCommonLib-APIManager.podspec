@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "KKCommonLib-APIManager"
-  spec.version      = "0.1.1"
+  spec.version      = "0.1.2"
   spec.summary      = "A CocoaPods library written in Swift"
 
   # This description is used to generate tags and improve search results.
@@ -67,7 +67,7 @@ Pod::Spec.new do |spec|
   # spec.platform     = :ios
   # spec.platform     = :ios, "5.0"
 
-  spec.ios.deployment_target = "11.0"
+  spec.ios.deployment_target = "12.0"
   spec.swift_version = "5.0"
 
   #  When using multiple platforms
