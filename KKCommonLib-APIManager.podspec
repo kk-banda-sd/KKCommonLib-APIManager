@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'KKCommonLib-APIManager'
-  s.version          = '0.1.4'
+  s.version          = '0.1.5'
   s.summary          = 'A CocoaPods library written in Swift'
 
   s.description      = <<-DESC
@@ -17,6 +17,9 @@ This CocoaPods library helps you perform calculation.
   s.swift_version = '5.0'
 
   s.source_files = 'KKCommonLib-APIManager/**/*.{h,m,swift}'
+
+  s.xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   
   s.dependency 'KKCommonLib'
   s.dependency 'Alamofire'
