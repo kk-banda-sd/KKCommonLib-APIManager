@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'KKCommonLib-APIManager'
-  s.version          = '0.1.8'
+  s.version          = '0.1.9'
   s.summary          = 'A CocoaPods library written in Swift'
 
   s.description      = <<-DESC

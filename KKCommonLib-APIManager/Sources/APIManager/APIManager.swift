@@ -9,8 +9,8 @@ open class APIManager {
     // MARK: - Vars & Lets
     private static var configurator: URLSessionConfiguration {
         let configuration = URLSessionConfiguration.default
-        configuration.timeoutIntervalForRequest = 60
-        configuration.timeoutIntervalForResource = 60
+        configuration.timeoutIntervalForRequest = 600
+        configuration.timeoutIntervalForResource = 600
         configuration.httpAdditionalHeaders = HTTPHeaders.default.dictionary
         return configuration
     }
