@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'KKCommonLib-APIManager'
-  s.version          = '0.1.5'
+  s.version          = '0.1.6'
   s.summary          = 'A CocoaPods library written in Swift'
 
   s.description      = <<-DESC
@@ -11,11 +11,11 @@ This CocoaPods library helps you perform calculation.
 
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author             = { 'kk-cps' => '64898911+kk-banda-sd@users.noreply.github.com' }
-  s.source           = { :git => 'https://github.com/kk-banda-sd/KKCommonLib-APIManager.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '12.0'
   s.swift_version = '5.0'
 
+  s.source           = { :git => 'https://github.com/kk-banda-sd/KKCommonLib-APIManager.git', :tag => s.version.to_s }
   s.source_files = 'KKCommonLib-APIManager/**/*.{h,m,swift}'
   
   s.dependency 'KKCommonLib'
