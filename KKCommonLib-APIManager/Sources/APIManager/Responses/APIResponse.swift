@@ -8,6 +8,8 @@ open class APIResponse: NSObject {
     
     public var error: KKError?
     
+    public var message: String?
+    
     open func parseFromResponse(_ dict: JSON) {
         
     }
