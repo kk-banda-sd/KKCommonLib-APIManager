@@ -11,6 +11,7 @@
 		B160EC8B27237F7F00C1F840 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B160EC8627237F7F00C1F840 /* APIManager.swift */; };
 		B160EC8C27237F7F00C1F840 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B160EC8727237F7F00C1F840 /* APIRequest.swift */; };
 		B160EC8D27237F7F00C1F840 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B160EC8827237F7F00C1F840 /* EndPointType.swift */; };
+		B1DD573D2A25E58600595BD3 /* APIManager+SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DD573C2A25E58600595BD3 /* APIManager+SwiftyJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +19,7 @@
 		B160EC8627237F7F00C1F840 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		B160EC8727237F7F00C1F840 /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		B160EC8827237F7F00C1F840 /* EndPointType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
+		B1DD573C2A25E58600595BD3 /* APIManager+SwiftyJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIManager+SwiftyJSON.swift"; sourceTree = "<group>"; };
 		B1EA2DBD2722E0F500A2593E /* KKCommonLib-APIManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "KKCommonLib-APIManager.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -35,10 +37,11 @@
 		B160EC8327237F7F00C1F840 /* APIManager */ = {
 			isa = PBXGroup;
 			children = (
-				B160EC8427237F7F00C1F840 /* Responses */,
 				B160EC8627237F7F00C1F840 /* APIManager.swift */,
+				B1DD573C2A25E58600595BD3 /* APIManager+SwiftyJSON.swift */,
 				B160EC8727237F7F00C1F840 /* APIRequest.swift */,
 				B160EC8827237F7F00C1F840 /* EndPointType.swift */,
+				B160EC8427237F7F00C1F840 /* Responses */,
 			);
 			path = APIManager;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 				B160EC8D27237F7F00C1F840 /* EndPointType.swift in Sources */,
 				B160EC8B27237F7F00C1F840 /* APIManager.swift in Sources */,
 				B160EC8C27237F7F00C1F840 /* APIRequest.swift in Sources */,
+				B1DD573D2A25E58600595BD3 /* APIManager+SwiftyJSON.swift in Sources */,
 				B160EC8A27237F7F00C1F840 /* APIResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

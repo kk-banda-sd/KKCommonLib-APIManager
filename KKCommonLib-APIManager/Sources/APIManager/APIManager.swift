@@ -1,10 +1,9 @@
 import Alamofire
-import Alamofire_SwiftyJSON
 
 open class APIManager {
     
     // MARK: - Vars & Lets
-    public let sessionManager: SessionManager
+    public let session: Session
     static public var networkEnviroment: NetworkEnvironment = .production
     
     // MARK: - Vars & Lets
@@ -12,12 +11,12 @@ open class APIManager {
         let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForRequest = 60
         configuration.timeoutIntervalForResource = 60
-        configuration.httpAdditionalHeaders = SessionManager.defaultHTTPHeaders
+        configuration.httpAdditionalHeaders = HTTPHeaders.default.dictionary
         return configuration
     }
     
     private static var sharedApiManager: APIManager = {
-        let apiManager = APIManager(sessionManager: SessionManager(configuration: configurator))
+        let apiManager = APIManager(session: Session(configuration: configurator))
         
         return apiManager
     }()
@@ -28,8 +27,8 @@ open class APIManager {
     }
     
     // MARK: - Initialization
-    private init(sessionManager: SessionManager) {
-        self.sessionManager = sessionManager
+    private init(session: Session) {
+        self.session = session
     }
 }
 
@@ -37,25 +36,24 @@ open class APIManager {
 public extension APIManager {
     @discardableResult
     func request<T: APIResponse>(type: EndPointType, params: Parameters? = nil, responseClass: T, handler: @escaping (T) -> Void) -> APIRequest {
-        return self.sessionManager.request(type.url,
+        return self.session.request(type.url,
                                     method: type.httpMethod,
                                     parameters: params,
                                     encoding: type.encoding,
                                     headers: type.headers).responseSwiftyJSON(queue: .main, completionHandler: { (response) in
-                                        let serverResponse = responseClass
-                                        if let statusCode = response.response?.statusCode, statusCode == 200 || statusCode == 201 {
-                                            serverResponse.complete = true
-                                        }
-                                        if let JSON = response.result.value {
-                                            if serverResponse.complete == false {
-                                                serverResponse.complete = !response.result.isFailure
-                                            }
-                                            serverResponse.parseFromResponse(JSON)
-                                        } else if let error = response.error, serverResponse.complete == false {
-                                            serverResponse.error = error.kkError
-                                            serverResponse.complete = !response.result.isFailure
-                                        }
-                                        handler(serverResponse)
-                                    }).apiRequest
+            let serverResponse = responseClass
+            if let statusCode = response.response?.statusCode, statusCode == 200 || statusCode == 201 {
+                serverResponse.complete = true
+            }
+            switch response.result {
+            case .success(let JSON):
+                serverResponse.complete = true
+                serverResponse.parseFromResponse(JSON)
+            case .failure(let error):
+                serverResponse.complete = false
+                serverResponse.error = error.kkError
+            }
+            handler(serverResponse)
+        }).apiRequest
     }
 }
