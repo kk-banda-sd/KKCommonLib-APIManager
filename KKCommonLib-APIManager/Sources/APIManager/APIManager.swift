@@ -42,16 +42,20 @@ public extension APIManager {
                                     encoding: type.encoding,
                                     headers: type.headers).responseSwiftyJSON(queue: .main, completionHandler: { (response) in
             let serverResponse = responseClass
-            if let statusCode = response.response?.statusCode, statusCode == 200 || statusCode == 201 {
-                serverResponse.complete = true
+            if let statusCode = response.response?.statusCode {
+                if statusCode == 200 || statusCode == 201 {
+                    serverResponse.complete = true
+                }
             }
             switch response.result {
             case .success(let JSON):
                 serverResponse.complete = true
                 serverResponse.parseFromResponse(JSON)
             case .failure(let error):
-                serverResponse.complete = false
-                serverResponse.error = error.kkError
+                if (!serverResponse.complete) {
+                    serverResponse.complete = false
+                    serverResponse.error = error.kkError
+                }
             }
             handler(serverResponse)
         }).apiRequest
