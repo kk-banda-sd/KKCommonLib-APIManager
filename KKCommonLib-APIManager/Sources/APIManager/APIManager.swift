@@ -28,10 +28,12 @@ open class APIManager {
     private init(session: Session) {
         self.session = session
     }
-    
-    // MARK: - Request
+}
+
+// MARK: - Request
+public extension APIManager {
     @discardableResult
-    open func request<T: APIResponse>(type: EndPointType, params: Parameters? = nil, responseClass: T, handler: @escaping (T) -> Void) -> APIRequest {
+    func makeRequest<T: APIResponse>(type: EndPointType, params: Parameters? = nil, responseClass: T, handler: @escaping (T) -> Void) -> APIRequest {
         return self.session.request(type.url,
                                     method: type.httpMethod,
                                     parameters: params,
