@@ -5,8 +5,6 @@ open class APIManager {
     // MARK: - Vars & Lets
     public let session: Session
     static public var networkEnviroment: NetworkEnvironment = .production
-    
-    // MARK: - Vars & Lets
     private static var configurator: URLSessionConfiguration {
         let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForRequest = 600
@@ -15,13 +13,13 @@ open class APIManager {
         return configuration
     }
     
+    // MARK: - Accessors
     private static var sharedApiManager: APIManager = {
         let apiManager = APIManager(session: Session(configuration: configurator))
         
         return apiManager
     }()
     
-    // MARK: - Accessors
     public class func shared() -> APIManager {
         return self.sharedApiManager
     }
@@ -30,12 +28,10 @@ open class APIManager {
     private init(session: Session) {
         self.session = session
     }
-}
-
-// MARK: - Requests
-public extension APIManager {
+    
+    // MARK: - Request
     @discardableResult
-    func request<T: APIResponse>(type: EndPointType, params: Parameters? = nil, responseClass: T, handler: @escaping (T) -> Void) -> APIRequest {
+    open func request<T: APIResponse>(type: EndPointType, params: Parameters? = nil, responseClass: T, handler: @escaping (T) -> Void) -> APIRequest {
         return self.session.request(type.url,
                                     method: type.httpMethod,
                                     parameters: params,
